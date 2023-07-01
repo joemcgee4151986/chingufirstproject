@@ -1,0 +1,16 @@
+
+li{
+    display: inline;
+    font-size: 40px;
+    float: left;
+}
+a{
+    display: block;
+    padding: 8px;
+    background-color: #383B3C;
+}
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
