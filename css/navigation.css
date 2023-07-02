@@ -3,13 +3,21 @@ li{
     display: inline;
     font-size: 40px;
     float: left;
+    margin:0 auto;
+    
 }
 a{
-    display: block;
+  
     padding: 8px;
     background-color: #383B3C;
     text-decoration: none;
     color:white;
+   
+}
+navbar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (max-width: 600px) {
     .column {
