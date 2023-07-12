@@ -5,69 +5,71 @@ class navbar extends HTMLElement {
   
     connectedCallback() {
       this.innerHTML = `
-      <navbar>
       <style>
-      nav {
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color:  #333;
+      function myFunction() {
+        var x = document.getElementById("myTopNavbar");
+        if (x.className === "topNavbar") {
+          x.className += " responsive";
+        } else {
+          x.className = "topNavbar";
+        }
       }
-      ul li {
-        list-style: none;
-        display: inline;
+      .topNavbar {
+        overflow: hidden;
+        background-color: #333;
       }
-      a {
+      .topNavbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
         text-decoration: none;
-        color: white;
+        font-size: 17px;
       }
-      .btn {
-        background-color:  #333;
-        color: white;
-        border: 1px solid gray;
-        padding: 6px 28px;
+      .dropdown {
+        float: left;
+        overflow: hidden;
       }
-      .btn:hover {
-        background-color: #49505F;
-        
+      .dropdown-content{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        z-index: 1;
       }
-.burger-menu {
-  color: var(--primary-color);
-  font-size: 2rem;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-  display: none;
-}
+      .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+ 
 
-@media only screen and (max-width: 800px) {
-  header nav {
-    
-  }
-      </navbar>
+@media only screen and (max-width: 768px) {
+  
+}
         </style>
-        <header>
-        <nav>
-        <ul id ="navbar">
-          <li>
-            <a href="#" button class = "btn">Home</a>
-          </li>
-          <li>
-            <a href="#" button class = "btn">About</a>
-          </li>
-          <li>
-            <a href="#" button class = "btn">Services</a>
-          </li>
-          <li>
-          <a href="#" button class = "btn">Contact</a>
-        </li>
-        <li>
-          <a href="#" button class = "btn">External</a>
-        </li>
-        </ul>
-        </nav>
-        </header>
+        <div class="topNavbar" id = myTopNavbar>
+          <div class="dropbtn">
+          <a href="#home" class="active">Home</a>
+          <a href="#news">News</a>
+          <a href="#contact">Contact</a>
+          <div class="dropdown">
+          <button class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+      </div>
       `;
     }
   }
