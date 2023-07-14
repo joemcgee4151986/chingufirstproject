@@ -18,6 +18,9 @@ class navbar extends HTMLElement {
         overflow: hidden;
         background-color: #333;
       }
+      .topNavbar .icon {
+        display: none;
+      }
       .topNavbar a {
         float: left;
         display: block;
@@ -49,10 +52,39 @@ class navbar extends HTMLElement {
       .dropdown:hover .dropdown-content {
         display: block;
       }
+      .dropdown-content a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .dropdown .dropbtn {
+        font-size: 17px;    
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+      }
+      .topNavbar.responsive .dropdown {float: none;}
+      .topNavbar.responsive .dropdown-content {position: relative;}
+      .topNavbar.responsive .dropdown .dropbtn {
+        display: block;
+        width: 100%;
+        text-align: left;
  
 
 @media only screen and (max-width: 768px) {
-  
+  .topNavbar a:not(:first-child), .dropdown .dropbtn {
+    display: none;
+  }
+  .topNavbar a.icon {
+    float: right;
+    display: block;
+    .topNavbar.responsive .dropdown .dropbtn {
+      display: block;
+      width: 100%;
+      text-align: left;
 }
         </style>
         <div class="topNavbar" id = myTopNavbar>
@@ -61,9 +93,7 @@ class navbar extends HTMLElement {
           <a href="#news">News</a>
           <a href="#contact">Contact</a>
           <div class="dropdown">
-          <button class="dropbtn">Dropdown 
-      <i class="fa fa-caret-down"></i>
-    </button>
+          <button class="dropbtn">Dropdown</button>
     <div class="dropdown-content">
       <a href="#">Link 1</a>
       <a href="#">Link 2</a>
